@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 from kafka import KafkaProducer
 
-# Variáveis globais de controle
+
 MAX_FRAUD_SEQUENCE = 5
 fraud_sequence = 0
 
@@ -52,12 +52,13 @@ def iniciar_producer():
         while True:
             evento = criar_transacao()
             produtor.send(topico, value=evento)
-            print(f"📦 Transação enviada → {evento}")
+            print(f" Transação enviada → {evento}")
             time.sleep(3)
     except KeyboardInterrupt:
-        print("\n🛑 Finalizando producer com segurança...")
+        print("\n Finalizando producer com segurança...")
         produtor.close()
 
 
 if __name__ == "__main__":
     iniciar_producer()
+
