@@ -81,15 +81,16 @@ try:
         session.commit()
 
         if fraude:
-            logging.warning(f"🚨 FRAUDE DETECTADA: {fraude} | "
+            logging.warning(f" FRAUDE DETECTADA: {fraude} | "
                             f"Cliente: {transacao['client_id']} | "
                             f"Valor: {transacao['amount']} | "
                             f"Cidade: {transacao['city']}")
         else:
-            logging.info(f"✅ Transação normal: Cliente {transacao['client_id']} - "
+            logging.info(f" Transação Aprovada: Cliente {transacao['client_id']} - "
                          f"{transacao['amount']} em {transacao['city']}")
 
 except KeyboardInterrupt:
-    logging.info("🛑 Encerrando consumer...")
+    logging.info(" Encerrando ")
     session.close()
+
 
