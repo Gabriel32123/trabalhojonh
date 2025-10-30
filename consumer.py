@@ -22,7 +22,7 @@ consumer = KafkaConsumer(
     group_id='fraude-detector'
 )
 
-logging.info("✅ Consumer conectado ao Kafka — ouvindo o tópico 'transacoes'...")
+logging.info(" Consumer conectado ao Kafka — ouvindo o tópico 'transacoes'...")
 
 
 historico = defaultdict(list)
@@ -92,3 +92,4 @@ try:
 except KeyboardInterrupt:
     logging.info("🛑 Encerrando consumer...")
     session.close()
+
